@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой макрос</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#11151a;color:#fff;font-family:Arial,sans-serif}
+.box{max-width:900px;margin:auto;padding:20px}
+.card{background:#1b2128;border-radius:16px;padding:20px}
+h1{text-align:center;font-size:28px;margin:0 0 15px}
+.sub{text-align:center;color:#aaa;margin-bottom:15px}
+textarea{width:100%;height:55vh;resize:vertical;background:#0d1117;color:#fff;border:1px solid #333;border-radius:10px;padding:12px;font-family:monospace;font-size:13px}
+button{width:100%;margin-top:14px;padding:15px;border:0;border-radius:10px;background:#238636;color:#fff;font-size:17px;font-weight:bold}
+button:active{transform:scale(.99)}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="card">
+<h1>📋 Мой макрос</h1>
+<div class="sub">Нажми кнопку, чтобы скопировать макрос</div>
+<textarea id="macro" readonly></textarea>
+<button id="copy">📋 Копировать макрос</button>
+</div>
+</div>
+<script>
+const macro = "[{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":7,\"Position\":\"114.10387420654297, -31.568737030029297, -60.540802001953125\",\"ID\":63,\"CF\":\"114.103874, -31.568737, -60.540802, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_trithorn\"},{\"ID\":63,\"Type\":\"ToggleAutoUpgrade\",\"Time\":8},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":37,\"Position\":\"116.99456024169922, -31.568737030029297, -54.814430236816406\",\"ID\":113,\"CF\":\"116.99456, -31.568737, -54.8144302, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_well\"},{\"ID\":113,\"Type\":\"ToggleAutoUpgrade\",\"Time\":41},{\"ID\":63,\"Type\":\"ToggleAutoUpgrade\",\"Time\":44},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Unit\":\"unit_chicken_coop\",\"Rotation\":180,\"PathIndex\":1,\"Position\":\"22.27543830871582, -31.326635360717773, 34.139373779296875\",\"ID\":268,\"CF\":\"22.2754383, -31.3266354, 34.1393738, 0.343581498, -0.0304579102, -0.938628793, -0, 0.99947387, -0.0324322954, 0.939122856, 0.0111431368, 0.343400776\",\"Time\":98},{\"ID\":268,\"Type\":\"ToggleAutoUpgrade\",\"Time\":99},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":153,\"Position\":\"125.24482727050781, -31.568740844726562, -59.337364196777344\",\"ID\":405,\"CF\":\"125.244827, -31.5687408, -59.3373642, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_egg_basket\"},{\"ID\":405,\"Type\":\"ToggleAutoUpgrade\",\"Time\":153},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":156,\"Position\":\"130.3257598876953, -31.568740844726562, -56.4398307800293\",\"ID\":421,\"CF\":\"130.32576, -31.5687408, -56.4398308, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_egg_basket\"},{\"ID\":421,\"Type\":\"ToggleAutoUpgrade\",\"Time\":157},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":170,\"Position\":\"135.2154083251953, -31.568729400634766, -13.206014633178711\",\"ID\":455,\"CF\":\"135.215408, -31.5687294, -13.2060146, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_sniper\"},{\"ID\":455,\"Type\":\"ToggleAutoUpgrade\",\"Time\":171},{\"ID\":63,\"Type\":\"UpgradeUnit\",\"Time\":190},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":194,\"Position\":\"131.4252471923828, -31.568744659423828, -61.37934112548828\",\"ID\":517,\"CF\":\"131.425247, -31.5687447, -61.3793411, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":517,\"Type\":\"ToggleAutoUpgrade\",\"Time\":195},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":197,\"Position\":\"132.2623748779297, -31.568737030029297, -50.498992919921875\",\"ID\":530,\"CF\":\"132.262375, -31.568737, -50.4989929, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":530,\"Type\":\"ToggleAutoUpgrade\",\"Time\":198},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":203,\"Position\":\"129.23191833496094, -31.568737030029297, -46.860137939453125\",\"ID\":548,\"CF\":\"129.231918, -31.568737, -46.8601379, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_divine_sunflower\"},{\"ID\":548,\"Type\":\"ToggleAutoUpgrade\",\"Time\":204},{\"ID\":548,\"Type\":\"SellUnit\",\"Time\":262},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":264,\"Position\":\"153.00636291503906, -31.56873321533203, -18.197071075439453\",\"ID\":708,\"CF\":\"153.006363, -31.5687332, -18.1970711, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_divine_sunflower\"},{\"ID\":708,\"Type\":\"ToggleAutoUpgrade\",\"Time\":265},{\"ID\":517,\"Type\":\"SellUnit\",\"Time\":266},{\"ID\":530,\"Type\":\"SellUnit\",\"Time\":268},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":269,\"Position\":\"154.75840759277344, -31.568737030029297, 2.7984771728515625\",\"ID\":715,\"CF\":\"154.758408, -31.568737, 2.79847717, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":715,\"Type\":\"ToggleAutoUpgrade\",\"Time\":270},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":272,\"Position\":\"149.78411865234375, -31.568737030029297, 15.273696899414062\",\"ID\":720,\"CF\":\"149.784119, -31.568737, 15.2736969, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":720,\"Type\":\"ToggleAutoUpgrade\",\"Time\":273},{\"ID\":708,\"Type\":\"SellUnit\",\"Time\":275},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":276,\"Position\":\"130.21575927734375, -31.56873321533203, 28.13915252685547\",\"ID\":725,\"CF\":\"130.215759, -31.5687332, 28.1391525, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_divine_sunflower\"},{\"ID\":725,\"Type\":\"ToggleAutoUpgrade\",\"Time\":277},{\"ID\":715,\"Type\":\"SellUnit\",\"Time\":279},{\"ID\":720,\"Type\":\"SellUnit\",\"Time\":280},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":281,\"Position\":\"109.7751693725586, -31.56873321533203, 30.489784240722656\",\"ID\":733,\"CF\":\"109.775169, -31.5687332, 30.4897842, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":733,\"Type\":\"ToggleAutoUpgrade\",\"Time\":282},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":284,\"Position\":\"93.9658432006836, -31.568737030029297, 33.82765579223633\",\"ID\":736,\"CF\":\"93.9658432, -31.568737, 33.8276558, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_tree_golem\"},{\"ID\":736,\"Type\":\"ToggleAutoUpgrade\",\"Time\":286},{\"ID\":725,\"Type\":\"SellUnit\",\"Time\":288},{\"Valid\":true,\"Type\":\"PlaceUnit\",\"Time\":289,\"Position\":\"70.01840209960938, -31.568737030029297, 26.327774047851562\",\"ID\":744,\"CF\":\"70.0184021, -31.568737, 26.327774, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1\",\"Rotation\":180,\"Unit\":\"unit_divine_sunflower\"},{\"ID\":744,\"Type\":\"ToggleAutoUpgrade\",\"Time\":290}]";
+document.getElementById("macro").value = macro;
+document.getElementById("copy").onclick = async () => {
+  try {
+    await navigator.clipboard.writeText(macro);
+  } catch(e) {
+    const textarea = document.getElementById("macro");
+    textarea.focus();
+    textarea.select();
+    document.execCommand("copy");
+  }
+  document.getElementById("copy").textContent = "✅ Скопировано!";
+  setTimeout(() => document.getElementById("copy").textContent = "📋 Копировать макрос", 1500);
+};
+</script>
+</body>
+</html>
